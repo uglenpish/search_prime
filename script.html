@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .text {
+            color:red;
+            width: 400px;
+            padding: 20px;
+            font-size: 18px;
+        }
+    </style>
+    <div class="text">Если введено одно число
+        <p>1. Если направление поиска прямое - ищем первые 3 простые числа, большего введенного</p>
+        <p>2. Если направление обратное, ищем первые 3 простые числа меньше введенного числа</p>
+        
+        <p>Если введено два числа (через запятую)</p>
+        <p>1. Учесть, что меньшее число может быть введено вторым</p>
+        <p>2. Поиск производить от меньшего числа до большего числа</p>
+        <p>3. Если направление поиска прямое - ищем первые три простые числа в диапазоне</p>
+        <p>4. Если направление поиска обратное - ищем последние три простые числа в диапазоне</p>
+        <p>5. Если числа не найдены или найдено меньше трех, вывести соответствующее сообщение</p>
+        
+        <p>Если введено более двух чисел или они введены некорректно</p>
+        <p>Продолжать запрашивать ввод, до тех пор, пока не будет введено корректное значение.</p>
+        
+        <p>Направление поиска указывать через 0 - прямое направление (преобразовать в false), 1 - обратное направление (преобразовать в true)</p>
+    </div>
+    <script>
+        function blabla() {
+            let values = prompt('Введите одно число или два через запятую', '').split(',').map(string => +string).sort();
+            
+            if (values.length === 3 || !Number.isInteger(values[0]) || !Number.isInteger(values[1])) {
+                values = [];
+                blabla();
+            }
+            
+            let direction = +prompt('Введите число 0 или 1 для выбора направления', 0)
+            let result = countPrime(values, direction);
+            alert(result);
+        }
+    
+        function countPrime(values, direction) {
+            let result = [];
+            if (values.length === 1) {
+                switch (direction) {
+                    case 0:
+                        result = getMaxPrime(+values[0]);
+                        return result;
+                        break;
+                    case 1:
+                        result = getPrime(values[0]);
+                        return result.slice(-3);
+                        break;
+                }  
+            } else (values.length === 2) 
+                result = getPrime(values[1], values[0]);
+                console.log(result);
+                switch (direction) {
+                    case 0:
+                        return result.slice(-3);
+                        break;
+                    case 1:
+                        return result.slice(0, 3);
+                        break;
+                }
+            
+        }
+    
+        blabla();
+
+        // console.log(isPrime(5));
+    
+        function isPrime(num) {
+            // let max = Math.sqrt(num);
+            for(let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }    
+            
+        function getMaxPrime(arg) {
+            let arr = [];
+    
+            while(arr.length < 3) {
+                arg++
+                if (isPrime(arg)) {
+                    arr.push(arg);
+                }
+                
+            }
+            return arr;
+        }
+    
+        function getPrime(x, n=2) {
+            let arr = []
+            console.log(x);
+            for (let i=n; i<x; i++) {
+                if (isPrime(i)) {
+                    arr.push(i);
+                } 
+            }
+            return arr;
+        } 
+        
+    </script>
+</body>
+</html>
