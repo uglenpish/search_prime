@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="text">
+            <p>1. Если направление поиска прямое - ищем первые 3 простые числа, большего введенного</p>
+            <p>2. Если направление обратное, ищем первые 3 простые числа меньше введенного числа</p>
+            
+            <p>Если введено два числа (через запятую)</p>
+            <p>1. Учесть, что меньшее число может быть введено вторым</p>
+            <p>2. Поиск производить от меньшего числа до большего числа</p>
+            <p>3. Если направление поиска прямое - ищем первые три простые числа в диапазоне</p>
+            <p>4. Если направление поиска обратное - ищем последние три простые числа в диапазоне</p>
+            <p>5. Если числа не найдены или найдено меньше трех, вывести соответствующее сообщение</p>
+            
+            <p>Если введено более двух чисел или они введены некорректно</p>
+            <p>Продолжать запрашивать ввод, до тех пор, пока не будет введено корректное значение.</p>
+            
+            <p>Направление поиска указывать через 0 - прямое направление (преобразовать в false), 1 - обратное направление (преобразовать в true)</p>
+        </div>
+        <div class="form">
+            <label for="" class="label">
+                Введите число или два через запятую
+                <input id="data" type="text" class="label__input">
+            </label>
+            <label for="" class="label">
+                Введите 1 или 0 для выбора направления поиска
+                <input id="directions" type="text" class="label__input">
+            </label>
+            <button type="button" class="button">Найти</button>
+            <div class="result"></div>
+        </div>
+    </div>
+</body>
+</html>

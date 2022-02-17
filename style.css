@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color:red;
+    width: 400px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.label__input {
+    width: 300px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.button {
+    width: 200px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 15px 40px;
+    background: rgb(226, 223, 12);
+}
+
+.result {
+    width: 200px;
+    margin-left: 30px;
+    color: rgb(48, 51, 54);
+    border-bottom: 1px solid blue;
+}
