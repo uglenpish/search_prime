@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module">
+        import {searchPrime} from './script.js';
+        searchPrime();
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -29,11 +32,11 @@
         <div class="form">
             <label for="" class="label">
                 Введите число или два через запятую
-                <input id="data" type="text" class="label__input">
+                <input id="data" type="text" class="label__input" required>
             </label>
             <label for="" class="label">
                 Введите 1 или 0 для выбора направления поиска
-                <input id="directions" type="text" class="label__input">
+                <input id="directions" type="text" class="label__input" value="0" required>
             </label>
             <button type="button" class="button">Найти</button>
             <div class="result"></div>
